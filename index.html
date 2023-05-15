@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./stylesheet.css">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./labels.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,21 +22,36 @@
 <body>
     <header>
         <nav>
-            <a href="./index.html" class="nav-link"><span class="fa-solid fa-house"></span>Home<span class="active"></span></a>
-            <a href="./all.html" class="nav-link"><span class="fa-solid fa-check"></span>ToDos</a>
-            <a href="./new_todo.html" class="nav-link"><span class="fa-solid fa-circle-plus"></span>New ToDo</a>
-            <a href="./settings.html" class="nav-link" style="position: absolute; right: 20px;"><span class="fa-solid fa-wrench"></span>Settings</a>
+            <a href="./index.html" class="nav-link">
+                <span class="fa-solid fa-house"></span>
+                Home
+                <span class="active"></span>
+            </a>
+            <a href="./all.html" class="nav-link">
+                <span class="fa-solid fa-check"></span>
+                ToDos
+            </a>
+            <a href="./new_todo.html" class="nav-link">
+                <span class="fa-solid fa-circle-plus"></span>
+                New ToDo
+            </a>
+            <a href="./settings.html" class="nav-link" style="margin-left: auto;">
+                <span class="fa-solid fa-wrench"></span>
+                Settings
+            </a>
         </nav>
     </header>
     <main>
-        <div class="today">
-
-        </div>
-        <div class="week">
-
-        </div>
-        <div class="important">
-            
+        <div class="labels">
+            <div class="label" id="today">
+                <h2>Today</h2>
+            </div>
+            <div class="label" id="week">
+                <h2>This Week</h2>
+            </div>
+            <div class="label" id="important">
+                <h2>Important</h2>
+            </div>
         </div>
     </main>
     <script src="./main.js"></script>

@@ -1,0 +1,13 @@
+.labels {
+    
+}
+
+.label {
+    background-color: var(--label);
+    width: 600px;
+    color: var(--text);
+}
+
+.label h2 {
+    text-shadow: 0px 0px 4px var(--primary-color);
+}

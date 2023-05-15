@@ -9,7 +9,7 @@ nav {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    background-color: var(--nav);
+    background-color: var(--label);
 }
 
 nav a.nav-link {
@@ -18,7 +18,7 @@ nav a.nav-link {
     position: relative;
     height: 100%;
     margin: auto 10px;
-    color: var(--nav-link);
+    color: var(--text);
     font-weight: 600;
     text-decoration: none;
     text-shadow: 0px 0px 4px var(--primary-color);
@@ -32,7 +32,7 @@ span.active {
     height: 2px;
     width: 100%;
     border-radius: 1px;
-    background: var(--nav-link);
+    background: var(--text);
     box-shadow: 0px 0px 5px var(--primary-color);
     transition: 0.3s;
 }
