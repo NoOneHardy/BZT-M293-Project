@@ -3,6 +3,7 @@ nav {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    position: relative;
     height: 5vh;
     width: calc(100% - 20px);
     padding: 10px;
@@ -12,18 +13,39 @@ nav {
 }
 
 nav a.nav-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
     margin: auto 10px;
     color: var(--nav-link);
     font-weight: 600;
     text-decoration: none;
-    text-shadow: 0px 0px 3px var(--nav-link-glow);
+    text-shadow: 0px 0px 4px var(--primary-color);
     transition: 0.3s;
 }
 
-nav a.nav-link span {
-    margin-right: 5px; 
+span.active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    border-radius: 1px;
+    background: var(--nav-link);
+    box-shadow: 0px 0px 5px var(--primary-color);
+    transition: 0.3s;
+}
+
+nav a.nav-link span.fa-solid {
+    margin-right: 5px;
+    text-shadow: 0px 0px 2px var(--primary-color);
 }
 
 nav a.nav-link:hover {
-    transform: scale(1.2)
+    transform: scale(1.2);
+}
+
+nav a.nav-link:hover span.active {
+    background: var(--primary-color);
 }
