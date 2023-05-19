@@ -44,13 +44,46 @@
     <main>
         <section class="settings">
             <div class="colors">
-                <input class="color" type="color" name="primary" id="primary">
-                <input class="color" type="color" name="secondary" id="secondary">
-                <button class="apply-settings">Apply</button>
+                <div class="grid-item color-input" id="primary-item">
+                    <label for="primary">Primary</label>
+                    <input class="color" type="color" name="primary" id="primary">
+                </div>
+                <div class="grid-item color-input" id="secondary-item">
+                    <label for="secondary">Secondary</label>
+                    <input class="color" type="color" name="secondary" id="secondary">
+                </div>
+                <div class="grid-item" id="sync-item">
+                    <label for="sync">Sync colors</label>
+                    <label class="checkcontainer">
+                        <input type="checkbox" name="sync" id="color-sync" checked>
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
+                <div class="grid-item" id="preview">
+                    <span id="pre-title">Preview</span>
+                    <div id="pre-background"></div>
+                    <div id="pre-nav">
+                        <a href="" class="nav-link">
+                            <span class="fa-solid fa-house"></span>
+                            Home
+                            <span class="active"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid-item" id="apply-settings">
+                    <button id="apply-button">
+                        <span id="left-before"></span>
+                        <span id="left-after"></span>
+                        <span id="right-before"></span>
+                        <span id="right-after"></span>
+                        <span id="apply-text">Apply</span>
+                    </button>
+                </div>
             </div>
-        </section>    
+        </section>
     </main>
     <script src="./main.js"></script>
+    <script src="./settings.js"></script>
 </body>
 
 </html>

@@ -3,4 +3,6 @@
     --text: #e4e4e4;
     --primary-color: #00b4d8;
     --secondary-color: #03045e;
+    --new-primary-color: var(--primary-color);
+    --new-secondary-color: var(--secondary-color);
 }
