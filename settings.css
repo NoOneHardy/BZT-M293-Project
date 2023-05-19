@@ -1,0 +1,17 @@
+section.settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: calc(100% - 80px);
+    margin: 50px 40px;
+    padding: 20px;
+    background: var(--label);
+}
+
+input.color {
+    visibility: none;
+}
+
+input.color::-webkit-color-swatch {
+    
+}
