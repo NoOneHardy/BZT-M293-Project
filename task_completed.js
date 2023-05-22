@@ -5,6 +5,7 @@ checkbox.forEach(
         node.addEventListener('input', (e) => {
             const animatable = e.target.parentElement.previousSibling.previousSibling
             const todo = e.target.parentElement.parentElement
+            animatable.style.setProperty("top", (getComputedStyle(todo).getPropertyValue("height") / 2).toString())
             if (e.target.checked) {
                 animatable.classList.remove("not-completed")
                 setTimeout(function () {
@@ -12,10 +13,10 @@ checkbox.forEach(
                 }, 1)
                 setTimeout(function () {
                     todo.classList.add("completed")
-                }, 1500)
+                }, 750)
                 setTimeout(function () {
                     animatable.classList.remove("completed")
-                }, 2001)
+                }, 1001)
             } else {
                 animatable.classList.remove("completed")
                 setTimeout(function () {
@@ -23,10 +24,10 @@ checkbox.forEach(
                 }, 1)
                 setTimeout(function () {
                     todo.classList.remove("completed")
-                }, 500)
+                }, 750)
                 setTimeout(function () {
                     animatable.classList.remove("not-completed")
-                }, 2001)
+                }, 1001)
             }
         })
     }
