@@ -9,6 +9,7 @@ section.settings {
     border-radius: 10px;
     color: var(--text);
     font-weight: 700;
+    box-shadow: 4px 4px 10px black;
 }
 
 .colors {
