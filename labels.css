@@ -70,11 +70,9 @@
     margin: 10px;
     padding: 5px;
     width: 100%;
-    min-width: 575px;
     display: grid;
-    grid-template-columns: auto 200px 200px 75px 75px;
+    grid-template-columns: 30px 300px 200px 75px 75px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .todo * {
@@ -164,3 +162,50 @@ label.check .checkmark:after {
 }
 
 /* Bis hierhin ist der Code aus dem Internetforum */
+
+.important {
+    display: flex;
+    justify-content: center;
+}
+
+label.important-check-container input {
+    height: 0;
+    width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+label.important-check-container {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+label.important-check-container .checkmark {
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+label.check-container,
+.checkmark svg {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    fill: var(--secondary-color);
+}
+
+svg#checked {
+    fill: var(--primary-color);
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+label.check-container input:checked~.checkmark {
+    opacity: 1;
+    transform: rotate(360deg);
+}

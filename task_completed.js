@@ -1,8 +1,8 @@
-const checkbox = document.querySelectorAll('.todo-completed')
+const completedCheckbox = document.querySelectorAll('.todo-completed')
 
-checkbox.forEach(
-    function (node, index) {
-        node.addEventListener('input', (e) => {
+completedCheckbox.forEach(
+    function (element, index) {
+        element.addEventListener('input', (e) => {
             const animatable = e.target.parentElement.previousSibling.previousSibling
             const todo = e.target.parentElement.parentElement
             animatable.style.setProperty("top", (getComputedStyle(todo).getPropertyValue("height") / 2).toString())

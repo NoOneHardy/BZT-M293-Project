@@ -9,8 +9,8 @@ const preview = document.querySelector('#preview')
 
 
 function applySettings() {
-    primaryColor = iPrimaryColor.value
-    secondaryColor = iSecondaryColor.value
+    let primaryColor = iPrimaryColor.value
+    let secondaryColor = iSecondaryColor.value
     setVariable('--primary-color', primaryColor)
     setVariable('--secondary-color', secondaryColor)
     let colors = {
