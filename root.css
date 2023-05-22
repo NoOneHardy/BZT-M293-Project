@@ -1,6 +1,7 @@
 :root {
     --label: #212121;
     --text: #e4e4e4;
+    --darker-text: #848484;
     --primary-color: #00b4d8;
     --secondary-color: #03045e;
     --new-primary-color: var(--primary-color);

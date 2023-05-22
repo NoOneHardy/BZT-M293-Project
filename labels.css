@@ -1,13 +1,150 @@
+@keyframes completed {
+    0% {
+        right: 0;
+        left: -20px;
+        width: 0%;
+    }
+    75% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        right: 0;
+        width: 0%;
+    }
+}
+
 .labels {
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: calc(100% - 40px);
+    margin: 30px 20px;
 }
 
 .label {
     background-color: var(--label);
-    width: 600px;
+    width: 40%;
     color: var(--text);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px black;
+    margin: 30px auto;
 }
 
 .label h2 {
     text-shadow: 0px 0px 4px var(--primary-color);
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--text);
 }
+
+#expired h2 {
+    text-shadow: 0px 0px 4px #dd3535;
+}
+
+.label i.fa-solid, .label i.fa-light {
+    margin-right: 5px;
+}
+
+.todo {
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    width: 100%;
+    min-width: 575px;
+    display: grid;
+    grid-template-columns: auto 200px 200px 75px 75px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo * {
+    transition: 0.3s;
+}
+
+.todo.completed * {
+    color: var(--darker-text);
+    text-decoration: line-through;
+}
+
+.todo-name {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.a-completed {
+    left: 0;
+    top: 10;
+    position: absolute;
+    background: linear-gradient(to top right, var(--secondary-color), var(--primary-color));
+    height: 15px;
+    z-index: 1;
+    filter: blur(7px);
+    border-radius: 10px;
+}
+
+div.a-completed.completed {
+    animation-name: completed;
+    animation-duration: 2s;
+}
+
+div.a-completed.not-completed {
+    animation-name: completed;
+    animation-duration: 2s;
+    animation-direction: reverse;
+}
+
+/* folgender Code ist mithilfe eines Internetforums erstellt worden 
+Ich habe ihn hier noch etwas modifiziert */
+label.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+label.check {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    user-select: none;
+}
+
+label.check .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background: black;
+    transition: all 0.7s;
+}
+
+label.check input:checked ~.checkmark:after {
+    opacity: 1;
+    transform: rotate(45deg);
+    border-width: 0 2px 2px 0;
+    transition: all 0.3s;
+}
+
+label.check .checkmark:after {
+    content: "";
+    display: block;
+    position: absolute;
+    opacity: 0;
+    left: 0.45rem;
+    top: 0.25rem;
+    width: 0.25rem;
+    height: 0.5rem;
+    border: solid #f0f0f0;
+    border-width: 0 1px 1px 0;
+    transition: all 0.75s;
+    transform: rotate(180deg);
+}
+
+/* Bis hierhin ist der Code aus dem Internetforum */

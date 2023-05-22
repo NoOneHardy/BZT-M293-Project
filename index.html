@@ -44,17 +44,54 @@
     <main>
         <div class="labels">
             <div class="label" id="today">
-                <h2>Today</h2>
+                <h2><i class="fa-solid fa-sun"></i>Today</h2>
+                <div class="todos" id="today-todo">
+                    <div href="" class="todo">
+                        <div class="a-completed"></div>
+                        <label class="check">
+                            <input type="checkbox" class="todo-completed">
+                            <div class="checkmark"></div>
+                        </label>
+                        <a href="" class="todo-name">Name</a>
+                        <span class="todo-category">Category</span>
+                        <span class="date">20.05.2023</span>
+                        <span class="time">23:59</span>
+                    </div>
+                    <div href="" class="todo">
+                        <div class="a-completed"></div>
+                        <label class="check">
+                            <input type="checkbox" class="todo-completed">
+                            <div class="checkmark"></div>
+                        </label>
+                        <a href="" class="todo-name">Name</a>
+                        <span class="todo-category">Category</span>
+                        <span class="date">20.05.2023</span>
+                        <span class="time">23:59</span>
+                    </div>
+                </div>
             </div>
             <div class="label" id="week">
-                <h2>This Week</h2>
+                <h2><i class="fa-solid fa-calendar-week"></i>This Week</h2>
+                <div class="todos" id="week-todo">
+
+                </div>
             </div>
             <div class="label" id="important">
-                <h2>Important</h2>
+                <h2><i class="fa-solid fa-star"></i>Important</h2>
+                <div class="todos" id="important-todo">
+
+                </div>
+            </div>
+            <div class="label" id="expired">
+                <h2><i class="fa-solid fa-circle-exclamation"></i>Expired</h2>
+                <div class="todos" id="expired-todo">
+
+                </div>
             </div>
         </div>
     </main>
     <script src="./main.js"></script>
+    <script src="./task_completed.js"></script>
 </body>
 
 </html>
