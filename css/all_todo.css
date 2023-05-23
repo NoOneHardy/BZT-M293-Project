@@ -32,7 +32,7 @@
     }
 }
 
-.labels {
+.categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -40,29 +40,24 @@
     margin: 30px 20px;
 }
 
-.label {
-    background-color: var(--label);
+.category {
     width: 40%;
+    padding: 10px;
     color: var(--text);
-    padding: 20px;
+    background: var(--label);
+    margin: 20px 10px 30px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px black;
-    margin: 30px auto;
+    font-weight: 550;
 }
 
-.label h2 {
-    text-shadow: 0px 0px 4px var(--primary-color);
+.category h2 {
     text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    text-shadow: 0px 0px 3px var(--primary-color);
     padding-bottom: 10px;
     border-bottom: 2px solid var(--text);
-}
-
-#expired h2 {
-    text-shadow: 0px 0px 4px #dd3535;
-}
-
-.label i.fa-solid, .label i.fa-light {
-    margin-right: 5px;
 }
 
 .todo {
@@ -71,7 +66,7 @@
     padding: 5px;
     width: 100%;
     display: grid;
-    grid-template-columns: 4.5% 45% 29.5% 11% 10%;
+    grid-template-columns: 5% 70% 15% 10%;
     align-items: center;
 }
 

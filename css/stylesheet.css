@@ -1,4 +1,6 @@
 body {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background: radial-gradient(var(--primary-color), var(--secondary-color));
+    background-repeat: no-repeat;
 }

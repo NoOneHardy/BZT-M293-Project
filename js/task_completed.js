@@ -39,7 +39,7 @@ completedCheckbox.forEach(
 
 function setTodoState(todo, value) {
     let data = JSON.parse(localStorage.getItem('data'))
-    let id = todo.lastChild.previousSibling.id
+    let id = todo.id
     data.todos[id].completed = value
 
     localStorage.setItem('data', JSON.stringify(data))

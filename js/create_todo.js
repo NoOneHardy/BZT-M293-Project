@@ -8,8 +8,10 @@ const bCreate = document.querySelector('#create-todo')
 bCreate.addEventListener('click', function () {
     if (iName.value === "") {
         alert("Please enter a name.")
+        return
     } else if (iDate.value === "") {
         alert("Please enter a date.")
+        return
     }
     let todos = []
     let data = localStorage.getItem("data")

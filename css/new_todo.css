@@ -146,7 +146,7 @@ label.check-container input:checked~.checkmark {
     transform: scale(1.2);
 }
 
-#confirm > button:active {
+#confirm button:active {
     transform: scale(0.9);
     transition: 0.1s;
 }
