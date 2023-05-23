@@ -26,7 +26,6 @@ bCreate.addEventListener('click', function () {
         "important": iImportant.checked,
         "completed": false
     }
-    todo = JSON.stringify(todo)
     todos.push(todo)
     data = {
         "todos": todos
