@@ -35,8 +35,8 @@ bCreate.addEventListener('click', function () {
     data = JSON.stringify(data)
     localStorage.setItem("data", data)
     iName.value = ""
-    iCategory.value = ""
+    iCategory.firstChild.setAttribute("selected", "selected")
     iDate.value = ""
-    iInfo.value = ""
+    iInfo.innerHTML = ""
     resetImportance()
 })

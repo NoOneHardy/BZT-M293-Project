@@ -3,11 +3,11 @@ const completedCheckbox = document.querySelectorAll('.todo-completed')
 completedCheckbox.forEach(
     function (element, index) {
         element.addEventListener('input', (e) => {
-            const animatable = e.target.parentElement.previousSibling.previousSibling
+            const animatable = e.target.parentElement.previousElementSibling
             const todo = e.target.parentElement.parentElement
             animatable.style.setProperty("top", (getComputedStyle(todo).getPropertyValue("height") / 2).toString())
             if (e.target.checked) {
-                animatable.classList.remove("not-completed")
+                animatable.classList.remove("completed")
                 setTimeout(function () {
                     animatable.classList.add("completed")
                 }, 1)
@@ -17,7 +17,6 @@ completedCheckbox.forEach(
                 setTimeout(function () {
                     animatable.classList.remove("completed")
                 }, 1001)
-
                 setTodoState(todo, true)
             } else {
                 animatable.classList.remove("completed")
@@ -30,7 +29,6 @@ completedCheckbox.forEach(
                 setTimeout(function () {
                     animatable.classList.remove("not-completed")
                 }, 1001)
-
                 setTodoState(todo, false)
             }
         })

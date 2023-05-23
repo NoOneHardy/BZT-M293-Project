@@ -48,6 +48,8 @@
     border-radius: 10px;
     box-shadow: 4px 4px 10px black;
     margin: 30px auto;
+    min-height: 125px;
+    height: fit-content
 }
 
 .label h2 {
@@ -69,9 +71,10 @@
     position: relative;
     margin: 10px;
     padding: 5px;
+    padding-right: 25px;
     width: 100%;
     display: grid;
-    grid-template-columns: 4.5% 45% 29.5% 11% 10%;
+    grid-template-columns: 4.5% 45% 39.5% 11%;
     align-items: center;
 }
 

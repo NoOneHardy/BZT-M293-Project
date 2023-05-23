@@ -42,6 +42,8 @@
 
 .category {
     width: 40%;
+    min-height: 125px;
+    height: fit-content;
     padding: 10px;
     color: var(--text);
     background: var(--label);
