@@ -121,7 +121,7 @@ label.check-container input:checked~.checkmark {
     margin-left: 5px;
 }
 
-#create-todo {
+#confirm > button {
     margin: 20px auto;
     padding: 5px;
     font-size: 40px;
@@ -136,11 +136,17 @@ label.check-container input:checked~.checkmark {
     transition: 0.4s;
 }
 
-#create-todo:hover {
+#confirm > #delete-todo {
+    background: radial-gradient(#ee2244, #771122);
+    background-clip: unset;
+    -webkit-background-clip: text;
+}
+
+#confirm > button:hover {
     transform: scale(1.2);
 }
 
-#create-todo:active {
+#confirm > button:active {
     transform: scale(0.9);
     transition: 0.1s;
 }
