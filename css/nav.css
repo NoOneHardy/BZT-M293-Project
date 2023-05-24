@@ -51,6 +51,10 @@ a.nav-link:hover span.active {
     background: var(--primary-color);
 }
 
+.new-extension {
+    margin-left: 5px;
+}
+
 @media screen and (max-width: 750px) {
     .new-extension {
         display: none;
