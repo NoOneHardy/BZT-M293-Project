@@ -210,6 +210,17 @@ label.check-container input:checked~.checkmark {
     transform: rotate(360deg);
 }
 
+@media screen and (max-width: 1675px) {
+    .todo-category {
+        display: none;
+    }
+
+    .todo {
+        grid-template-columns: 5% 75% 20%;
+    }
+}
+
+
 @media screen and (max-width: 1100px) {
     .todo {
         grid-template-columns: 7.5% 45% 32.5 15%;
@@ -242,7 +253,7 @@ label.check-container input:checked~.checkmark {
         grid-template-columns: 10% 90%;
     }
     
-    .todo-category, .date {
+    .date {
         display: none;
     }
 }

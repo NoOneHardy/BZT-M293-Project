@@ -52,3 +52,63 @@ label.check input {
 #iName {
     transition: 0.4s;
 }
+
+#iDate {
+    text-align: left;
+}
+
+@media screen and (max-width: 1100px) {
+    label.check .checkmark {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        background: black;
+        transition: all 0.7s;
+        box-shadow: 4px 4px 10px black;
+    }
+    
+    label.check input:checked ~.checkmark:after {
+        opacity: 1;
+        transform: rotate(45deg);
+        transition: all 0.3s;
+    }
+    
+    label.check .checkmark:after {
+        content: "";
+        display: block;
+        position: absolute;
+        opacity: 0;
+        left: 20px;
+        top: 10px;
+        width: 8px;
+        height: 20px;
+        border: solid var(--text);
+        border-width: 0 3px 3px 0;
+        transition: all 0.75s;
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    label.check .checkmark {
+        height: 40px;
+        width: 40px;
+    }
+    
+    label.check .checkmark:after {
+        left: 15px;
+        top: 7px;
+        border: solid var(--text);
+        border-width: 0 3px 3px 0;
+        transition: all 0.75s;
+        transform: rotate(180deg);
+    }
+    
+    label.check input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+}

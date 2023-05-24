@@ -69,7 +69,7 @@
     padding: 5px;
     width: 100%;
     display: grid;
-    grid-template-columns: 5% 70% 15% 10%;
+    grid-template-columns: 7.5% 70% 15% 7.5%;
     align-items: center;
 }
 
@@ -204,12 +204,6 @@ label.check-container input:checked~.checkmark {
     transform: rotate(360deg);
 }
 
-@media screen and (max-width: 1675px) {
-    .todo {
-        grid-template-columns: 7.5% 70% 15% 7.5%;
-    }
-}
-
 @media screen and (max-width: 750px) {
     .important {
         display: none;
@@ -224,6 +218,10 @@ label.check-container input:checked~.checkmark {
 
     .category h2 {
         font-size: 25px;
+    }
+
+    .todo {
+        grid-template-columns: 10% 90%;
     }
 
     .todo * {

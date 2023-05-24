@@ -91,6 +91,7 @@ function editTodo() {
     iCategory.style.setProperty("display", "none")
     sCategory.style.setProperty("display", "block")
     iDate.readOnly = false
+    iDate.style.setProperty("text-align", "right")
     iInfo.readOnly = false
     iImportant.onclick = ""
     iCompleted.parentElement.style.setProperty("display", "none")
@@ -122,6 +123,7 @@ function saveChanges() {
     iCategory.style.setProperty("display", "block")
     sCategory.style.setProperty("display", "none")
     iDate.readOnly = true
+    iDate.style.setProperty("text-align", "left")
     iInfo.readOnly = true
     iImportant.onclick = function() {return false}
     iCompleted.parentElement.style.setProperty("display", "block")
