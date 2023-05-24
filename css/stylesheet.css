@@ -4,3 +4,108 @@ body {
     background: radial-gradient(var(--primary-color), var(--secondary-color));
     background-repeat: no-repeat;
 }
+
+@keyframes showImpressumPanel {
+    0% {
+        transform: translate(450px, 0px);
+    }
+
+    25% {
+        transform: translate(0px, 0px);
+        padding-left: 15px;
+    }
+
+    75% {
+        transform: translate(0px, 0px);
+        padding-left: 15px;
+    }
+
+    100% {
+        transform: translate(450px, 0px);
+    }
+}
+
+.impressumPanel {
+    z-index: 1;
+    right: 0px;
+    bottom: 2vh;
+    position: fixed;
+    background: var(--label);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 15px;
+    padding-left: 50px;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    width: 500px;
+    height: 100px;
+    transform: translate(450px, 0px);
+    animation-name: showImpressumPanel;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    color: var(--text);
+    font-weight: 600;
+    box-shadow: 4px 4px 10px black;
+    overflow: hidden;
+}
+
+.info,
+.info * {
+    font-size: 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info a {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.impressumPanel:hover {
+    transform: translate(0px, 0px);
+    padding-left: 15px;
+}
+
+.impressum {
+    font-size: 25px;
+    margin: 5px;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 750px) {
+    @keyframes showImpressumPanel {
+        0% {
+            transform: translate(250px, 0px);
+        }
+    
+        25% {
+            transform: translate(0px, 0px);
+            padding-left: 15px;
+        }
+    
+        75% {
+            transform: translate(0px, 0px);
+            padding-left: 15px;
+        }
+    
+        100% {
+            transform: translate(250px, 0px);
+        }
+    }
+
+    .impressumPanel {
+        height: 150px;
+        width: calc(75% - 10px);
+        transform: translate(250px, 0px)
+    }
+
+    .separator {
+        display: none;
+    }
+}

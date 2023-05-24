@@ -41,13 +41,14 @@
 }
 
 .category {
+    min-width: 575px;
     width: 40%;
     min-height: 125px;
     height: fit-content;
     padding: 10px;
     color: var(--text);
     background: var(--label);
-    margin: 20px 10px 30px;
+    margin: 20px 30px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px black;
     font-weight: 550;
@@ -201,4 +202,31 @@ svg#checked {
 label.check-container input:checked~.checkmark {
     opacity: 1;
     transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1675px) {
+    .todo {
+        grid-template-columns: 7.5% 70% 15% 7.5%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .important {
+        display: none;
+    }
+    .date {
+        display: none;
+    }
+
+    .category {
+        min-width: 350px;
+    }
+
+    .category h2 {
+        font-size: 25px;
+    }
+
+    .todo * {
+        font-size: 15px;
+    }
 }

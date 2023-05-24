@@ -1,6 +1,3 @@
-const urlParams = new URLSearchParams(window.location.search)
-const todo = document.querySelector('#todo')
-
 const hex = ["a", "b", "c", "d", "e", "f"]
 
 // DRY

@@ -50,3 +50,12 @@ a.nav-link:hover {
 a.nav-link:hover span.active {
     background: var(--primary-color);
 }
+
+@media screen and (max-width: 750px) {
+    .new-extension {
+        display: none;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}

@@ -36,7 +36,7 @@ function loadDashboard() {
         html += ">\n"
         html += "\t\t<div class='checkmark'></div>\n"
         html += "\t</label>\n"
-        html += "\t<a href='./detail.html?id=\"" + id + "\"' class='todo-name'>" + name + "</a>\n"
+        html += "\t<a href='./detail.html?id=" + id + "' class='todo-name'>" + name + "</a>\n"
         html += "\t<span class='todo-category'>" + category[0].toUpperCase() + category.slice(1, category.length) +"</span>\n"
         html += "\t<span class='date'>" + date + "</span>\n"
         html += "</div>"

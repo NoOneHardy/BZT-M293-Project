@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/new_todo.css">
+    <link rel="stylesheet" href="./css/detail.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -33,7 +34,7 @@
             </a>
             <a href="./new_todo.html" class="nav-link">
                 <span class="fa-solid fa-circle-plus"></span>
-                New ToDo
+                New <span class="new-extension">ToDo</span>
             </a>
             <a href="./settings.html" class="nav-link" style="margin-left: auto;">
                 <span class="fa-solid fa-wrench"></span>
@@ -44,20 +45,30 @@
     <main>
         <div class="create-label">
             <div class="todo-input" id="name">
-                <input type="text" id="iName" value="Clean my room" readonly>
+                <label class="check">
+                    <input type="checkbox" class="todo-completed" id="iCompleted">
+                    <div class="checkmark"></div>
+                </label>
+                <input type="text" id="iName" readonly>
             </div>
             <div class="todo-input" id="category">
-                <input type="text" name="category" id="iCategory" value="Private" readonly>
+                <input type="text" name="category" id="iCategory" readonly>
+                <select name="category" id="sCategory">
+                    <option value="private" selected>Private</option>
+                    <option value="business">Business</option>
+                    <option value="school">School</option>
+                    <option value="shopping">Shopping</option>
+                </select>
             </div>
             <div class="todo-input" id="date">
-                <input type="date" name="date" id="iDate" value="2023-05-25" readonly>
+                <input type="date" name="date" id="iDate" readonly>
             </div>
             <div class="todo-input" id="info">
-                <textarea name="info" id="iInfo" cols="30" rows="10" placeholder="Details" readonly>Bed, Cupboard, Desk, Floor</textarea>
+                <textarea name="info" id="iInfo" cols="30" rows="10" placeholder="Details" readonly></textarea>
             </div>
             <div class="todo-input" id="important">
                 <label class="check-container">
-                    <!--<input type="checkbox" name="important" class="iImportant" id="iImportant">-->
+                    <input type="checkbox" name="important" class="iImportant" id="iImportant" onclick="return false">
                     <div class="checkmark">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                             <path
@@ -72,17 +83,20 @@
             </div>
             <div id="confirm">
                 <button id="edit-todo">
-                    Edit ToDo
+                    Edit <i class="fa-solid fa-pencil"></i>
                 </button>
                 <button id="delete-todo">
-                    Delete ToDo
+                    Delete <i class="fa-solid fa-trash-can"></i>
+                </button>
+                <button id="save">
+                    Save <i class="fa-solid fa-floppy-disk"></i>
                 </button>
             </div>
         </div>
     </main>
     <script src="./js/main.js"></script>
     <script src="./js/important.js"></script>
-    <script src="./js/create_todo.js"></script>
+    <script src="./js/load_details.js"></script>
 </body>
 
 </html>
