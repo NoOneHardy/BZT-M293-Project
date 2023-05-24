@@ -23,14 +23,14 @@ function loadDashboard() {
         let completed = todo.completed
 
         let html = "<div id='" + id + "' class='todo todo" + id
-        if (completed === true) {
+        if (completed) {
             html += " completed"
         }
         html += "'>\n"
         html += "\t<div class='a-completed'></div>\n"
         html += "\t<label class='check'>\n"
         html += "\t\t<input type='checkbox' class='todo-completed'"
-        if (completed === true) {
+        if (completed) {
             html += " checked"
         }
         html += ">\n"
@@ -44,7 +44,7 @@ function loadDashboard() {
         let today = new Date(new Date().setHours(0, 0, 0, 0))
         date = date.split(".")
         let todoDate = new Date(new Date(date[1] + "." + date[0] + "." + date[2]).setHours(0, 0, 0, 0))
-        if (today > todoDate) {
+        if (today > todoDate && !completed) {
             expiredList.innerHTML += html
         }
         if (compareDates(today, todoDate)) {
@@ -53,7 +53,7 @@ function loadDashboard() {
         if (compareWeek(today, todoDate)) {
             weekList.innerHTML += html
         }
-        if (important === true) {
+        if (important) {
             importantList.innerHTML += html
         }
     }
@@ -90,7 +90,7 @@ loadDashboard()
 const completedCheckbox = document.querySelectorAll('.todo-completed')
 
 completedCheckbox.forEach(
-    function (element, index) {
+    function (element) {
         element.addEventListener('input', (e) => {
             const id = e.target.parentElement.parentElement.id
             const todos = document.querySelectorAll('.todo' + id)

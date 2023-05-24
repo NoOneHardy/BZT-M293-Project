@@ -122,10 +122,10 @@ label.check-container input:checked~.checkmark {
 }
 
 #confirm > button {
-    margin: 20px auto;
+    margin: 20px 100px;
     padding: 5px;
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 35px;
+    font-weight: 600;
     border: none;
     border-radius: 10px;
     background: radial-gradient(var(--primary-color), var(--secondary-color));
