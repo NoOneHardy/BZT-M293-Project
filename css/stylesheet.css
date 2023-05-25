@@ -79,33 +79,7 @@ body {
 }
 
 @media screen and (max-width: 750px) {
-    @keyframes showImpressumPanel {
-        0% {
-            transform: translate(250px, 0px);
-        }
-    
-        25% {
-            transform: translate(0px, 0px);
-            padding-left: 15px;
-        }
-    
-        75% {
-            transform: translate(0px, 0px);
-            padding-left: 15px;
-        }
-    
-        100% {
-            transform: translate(250px, 0px);
-        }
-    }
-
     .impressumPanel {
-        height: 150px;
-        width: calc(75% - 10px);
-        transform: translate(250px, 0px)
-    }
-
-    .separator {
         display: none;
     }
 }
