@@ -37,7 +37,7 @@ function loadDashboard() {
         html += "\t\t<div class='checkmark'></div>\n"
         html += "\t</label>\n"
         html += "\t<a href='./detail.html?id=" + id + "' class='todo-name'>" + name + "</a>\n"
-        html += "\t<span class='todo-category'>" + category[0].toUpperCase() + category.slice(1, category.length) +"</span>\n"
+        html += "\t<span class='todo-category'>" + getCategoryDisplayName(category) + "</span>\n"
         html += "\t<span class='date'>" + date + "</span>\n"
         html += "</div>"
 
@@ -50,10 +50,10 @@ function loadDashboard() {
         if (compareDates(today, todoDate)) {
             todayList.innerHTML += html
         }
-        if (compareWeek(today, todoDate)) {
+        if (compareWeek(today, todoDate) && !completed) {
             weekList.innerHTML += html
         }
-        if (important) {
+        if (important && !completed) {
             importantList.innerHTML += html
         }
     }

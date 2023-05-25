@@ -95,10 +95,16 @@ input.color::-webkit-color-swatch-wrapper {
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 20px;
+    width: 100%;
+    height: 100%
 }
 
 .color-input {
     width: 100px;
+}
+
+#primary::-webkit-color-swatch {
+    box-shadow: 0px 0px 10px var(--new-secondary-color);
 }
 
 #primary-item {
@@ -109,12 +115,21 @@ input.color::-webkit-color-swatch-wrapper {
     text-shadow: 0px 0px 3px var(--new-primary-color)
 }
 
+#secondary::-webkit-color-swatch {
+    box-shadow: 0px 0px 10px var(--new-primary-color);
+}
+
 #secondary-item {
     grid-area: 1 / 2 / 2 / 3;
 }
 
 #secondary-item label {
     text-shadow: 0px 0px 3px var(--new-secondary-color)
+}
+
+#primary-item label, #secondary-item label {
+    width: 100%;
+    text-align: center;
 }
 
 #sync-item {
@@ -169,7 +184,7 @@ input.color::-webkit-color-swatch-wrapper {
     display: none;
 }
 
-.checkcontainer input:checked ~.checkmark:after {
+.checkcontainer input:checked~.checkmark:after {
     display: block;
 }
 
@@ -281,24 +296,95 @@ input.color::-webkit-color-swatch-wrapper {
     cursor: pointer;
 }
 
+#categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#categories h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 3px var(--primary-color);
+}
+
+#new-category-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+#new-category, .name {
+    font-size: 15px;
+    height: fit-content;
+    border-radius: 10px;
+    border: none;
+    background: var(--darker-label);
+    width: auto;
+    color: var(--text);
+    padding: 5px 10px;
+    font-weight: 600;
+    margin: 5px 0 15px;
+}
+
+.name {
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    background: transparent;
+}
+
+#category-list {
+    list-style-type: none;
+}
+
+#category-list li {
+    display: flex;
+    align-items: center;
+    border: solid white;
+    border-width: 0 0 1px 0;
+    min-width: max-content;
+    text-align: center;
+    text-shadow: 0px 0px 3px var(--primary-color);
+    padding: 10px 20px 10px 30px;
+}
+
+#category-list li span.fa-solid {
+    float: right;
+    margin-left: 10px;
+    color: var(--secondary-color);
+    text-shadow: none;
+    cursor: pointer;
+}
+
+#category-list li:first-child {
+    border-width: 1px 0;
+}
+
 @media screen and (max-width: 1100px) {
     section.settings {
         min-width: 500px;
         width: calc(100% - 40px);
         margin: 50px 20px;
     }
-    
+
     .colors {
         grid-template-columns: 25% 25% 50%;
         grid-template-rows: 25% 25% 50%;
         width: 100%;
         height: 400px;
     }
-    
+
     input.color {
         --side: 40px;
     }
-    
+
     #preview {
         grid-area: 3 / 1 / 4 / 4;
         border: white solid;
@@ -310,19 +396,19 @@ input.color::-webkit-color-swatch-wrapper {
     #pre-title {
         margin-top: 20px;
     }
-    
+
     #primary-item {
         grid-area: 1 / 1 / 2 / 2;
     }
-    
+
     #secondary-item {
         grid-area: 1 / 2 / 2 / 3;
     }
-    
+
     #sync-item {
         grid-area: 2 / 1 / 3 / 3;
     }
-    
+
     #apply-settings {
         grid-area: 1 / 3 / 3 / 4;
     }
@@ -335,14 +421,14 @@ input.color::-webkit-color-swatch-wrapper {
         margin: 20px 10px;
         font-weight: 600;
     }
-    
+
     .colors {
         grid-template-columns: 50% 50%;
         grid-template-rows: 20% 20% 40% 20%;
         width: 100%;
         height: 500px;
     }
-    
+
     input.color {
         --side: 40px;
         margin: 5px auto;
@@ -352,26 +438,30 @@ input.color::-webkit-color-swatch-wrapper {
         border-width: 1px 0 1px 0;
         grid-area: 3 / 1 / 4 / 5;
     }
-        
+
     .colors .grid-item {
         margin: 0 10px;
     }
-    
+
     #primary-item {
         grid-area: 1 / 1 / 2 / 2;
     }
-    
+
     #secondary-item {
         grid-area: 1 / 2 / 2 / 3;
     }
-    
+
     #sync-item {
         grid-area: 2 / 1 / 3 / 3;
         justify-content: center;
         gap: 30px;
     }
-    
+
     #apply-settings {
         grid-area: 4 / 1 / 5 / 3;
+    }
+
+    #category-list li {
+        min-width: 300px;
     }
 }

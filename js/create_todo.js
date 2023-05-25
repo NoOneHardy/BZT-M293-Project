@@ -1,10 +1,10 @@
-const iName = document.querySelector('#iName')
-const iCategory = document.querySelector('#iCategory')
-const iDate = document.querySelector('#iDate')
-const iInfo = document.querySelector('#iInfo')
-const iImportant = document.querySelector('#iImportant')
-const bCreate = document.querySelector('#create-todo')
-const bFinish = document.querySelector('#finish')
+const iName = document.getElementById('iName')
+const iCategory = document.getElementById('iCategory')
+const iDate = document.getElementById('iDate')
+const iInfo = document.getElementById('iInfo')
+const iImportant = document.getElementById('iImportant')
+const bCreate = document.getElementById('create-todo')
+const bFinish = document.getElementById('finish')
 
 bCreate.addEventListener('click', function () {
     if (iName.value === "") {
@@ -30,15 +30,24 @@ bCreate.addEventListener('click', function () {
         "completed": false
     }
     todos.push(todo)
-    data = {
-        "todos": todos
+    todos.sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date)
+    })
+    if (data === null) {
+        data = {
+            "todos": todos,
+            "categories": ['business', 'private', 'school', 'shopping']
+        }
+    } else {
+        data.todos = todos
     }
+
     data = JSON.stringify(data)
     localStorage.setItem("data", data)
     iName.value = ""
     iCategory.getElementsByTagName('option')[0].selected = true
     iDate.value = ""
-    iInfo.innerHTML = ""
+    iInfo.value = ""
     resetImportance()
 })
 
@@ -66,11 +75,38 @@ bFinish.addEventListener('click', function () {
         "completed": false
     }
     todos.push(todo)
-    data = {
-        "todos": todos
+    todos.sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date)
+    })
+    if (data === null) {
+        data = {
+            "todos": todos,
+            "categories": ['business', 'private', 'school', 'shopping']
+        }
+    } else {
+        data.todos = todos
     }
     data = JSON.stringify(data)
     localStorage.setItem("data", data)
     window.location.href = "./all.html"
 })
 
+function loadCategoriesIntoSelect() {
+    let data = JSON.parse(localStorage.getItem('data'))
+    if (data === null) {
+        data = {
+            "todos": [],
+            "categories": ['business', 'private', 'school', 'shopping']
+        }
+    }
+    let html = ""
+
+    const categories = data.categories
+    categories.forEach(function (category) {
+        html += '<option value="' + category + '">' + getCategoryDisplayName(category) + '</option>'
+    });
+
+    iCategory.innerHTML = html
+}
+
+loadCategoriesIntoSelect()
