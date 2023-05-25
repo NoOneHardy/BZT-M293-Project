@@ -15,11 +15,18 @@ const bDelete = document.querySelector('#delete-todo')
 const bSave = document.querySelector('#save')
 bSave.style.setProperty("display", "none")
 
-let todos = JSON.parse(localStorage.getItem('data')).todos
+function loadCategoriesIntoSelect() {
+    let html = ""
+    const data = JSON.parse(localStorage.getItem('data'))
+    const categories = data.categories
+    categories.forEach(function (category) {
+        html += '<option value="' + category + '">' + getCategoryDisplayName(category) + '</option>'
+    });
 
-/*
-    iImportant.onclick = function () {return false}
-*/
+    sCategory.innerHTML = html
+}
+
+let todos = JSON.parse(localStorage.getItem('data')).todos
 
 function loadDetail() {
     const todo = todos[id]
@@ -133,4 +140,5 @@ function saveChanges() {
     loadDetail()
 }
 
+loadCategoriesIntoSelect()
 loadDetail()

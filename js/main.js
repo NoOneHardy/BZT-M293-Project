@@ -48,3 +48,23 @@ function halveHex(color) {
 
     return color
 }
+
+function getCategoryDisplayName(category) {
+    let words = category.split(' ')
+    let categoryDisplayName = ""
+    words.forEach(function (word, idx) {
+        if (word[0].search(/[a-z]+/) >= 0) {
+            categoryDisplayName += word[0].toUpperCase()
+            if (word.length > 1) {
+                categoryDisplayName += word.slice(1)
+            }
+        } else {
+            categoryDisplayName += word
+        }
+        if (idx < words.length - 1) {
+            categoryDisplayName += ' '
+        }
+    })
+
+    return categoryDisplayName
+}
