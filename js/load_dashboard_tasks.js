@@ -13,7 +13,7 @@ function loadDashboard() {
     expiredList.innerHTML = ""
 
     for (let id = 0; id < todos.length; id++) {
-        let todo = todos[id]
+        const todo = todos[id]
         let name = todo.name
         let category = todo.category
         let date = todo.date
@@ -21,12 +21,20 @@ function loadDashboard() {
         date = date[2] + "." + date[1] + "." + date[0]
         let important = todo.important
         let completed = todo.completed
+        let info = todo.info
+
+        info = info.replace(/'/g, "\'")
+        info = info.replace(/"/g, "'")
 
         let html = "<div id='" + id + "' class='todo todo" + id
         if (completed) {
             html += " completed"
         }
-        html += "'>\n"
+        html += "'"
+        if (info !== '') {
+            html += ' title="' + info + '"'
+        }
+        html +=">\n"
         html += "\t<div class='a-completed'></div>\n"
         html += "\t<label class='check'>\n"
         html += "\t\t<input type='checkbox' class='todo-completed'"

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/missing_input.css">
+    <link rel="stylesheet" href="./css/confirm_delete.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -42,6 +44,17 @@
         </nav>
     </header>
     <main>
+        <div id="confirm-delete">
+            <div id="warning">
+                <h2>Warning</h2>
+                <div id="todo-left">There are still todos in</div><div class="warn-category" id="warn-category"><!--Business--></div>
+                <div id="question">Do you want to delete <span id="which-category"></span><br> and set the todos to <div class="warn-category">Private?</div></div>
+            </div>
+            <div id="options">
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </div>
+        </div>
         <section class="settings">
             <div class="colors">
                 <div class="grid-item color-input" id="primary-item">
@@ -84,7 +97,7 @@
         <section class="settings">
             <div id="categories">
                 <h2>Categories</h2>
-                <div id="new-category-items">
+                <div id="new-category-item">
                     <input type="text" name="new-category" id="new-category" placeholder="Press Enter to confirm" autocomplete="off">
                 </div>
                 <ul id="category-list">
@@ -95,6 +108,8 @@
     </main>
     <script src="./js/main.js"></script>
     <script src="./js/settings.js"></script>
+    <script src="./js/missing_inputs.js"></script>
+    <script src="./js/confirm_delete.js"></script>
 </body>
 
 </html>

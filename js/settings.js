@@ -78,7 +78,7 @@ function loadCategories() {
         if (category === 'private') {
             li = '<li id="' + id + '"><input class="name" value="' + categoryDisplayName + '" readonly></li>'
         } else {
-            li = '<li id="' + id + '"><input class="name" value="' + categoryDisplayName + '" readonly> <span class="fa-solid fa-pencil" onclick="renameCategory(' + id + ')"></span> <span class="fa-solid fa-trash-can" onclick="removeCategory(' + id + ')"></span></li>'
+            li = '<li class="category" id="' + id + '"><input class="name" value="' + categoryDisplayName + '" readonly> <span class="fa-solid fa-pencil" onclick="renameCategory(' + id + ')"></span> <span class="fa-solid fa-trash-can" onclick="removeCategory(' + id + ')"></span></li>'
         }
         if (category.length > width) {
             width = category.length
@@ -107,9 +107,20 @@ function loadCategories() {
 }
 
 function newCategory() {
+    if (iNewCategory.value === '') {
+        shakeOnMissingInput(iNewCategory)
+        iNewCategory.placeholder = 'Name can\'t be empty'
+        return
+    }
     const data = JSON.parse(localStorage.getItem('data'))
     const categories = data.categories
     const category = iNewCategory.value
+    if (categories.includes(category.toLowerCase())) {
+        shakeOnExistingInput(iNewCategory)
+        iNewCategory.value = ''
+        iNewCategory.placeholder = 'Category already exists'
+        return
+    }
     categories.push(category.toLowerCase())
     data.categories = categories.sort()
     localStorage.setItem('data', JSON.stringify(data))
@@ -117,16 +128,21 @@ function newCategory() {
 }
 
 function removeCategory(id) {
-    let data = JSON.parse(localStorage.getItem('data'))
-    let categories = data.categories
-    let todos = data.todos
-    todos.forEach(function (todo, idx) {
-        if (todo.category === categories[id]) {
-            todo.category = 'private'
-            todos[idx] = todo
+    const data = JSON.parse(localStorage.getItem('data'))
+    const categories = data.categories
+    const category = categories[id]
+    const todos = data.todos
+    let todoCount = 0
+    todos.forEach(function (todo) {
+        if (todo.category === category) {
+            showPanel(id)
+            todoCount++
         }
     })
-    data.todos = todos
+    if (todoCount > 0) {
+        return
+    } 
+
     categories.splice(id, 1)
     data.categories = categories
     localStorage.setItem('data', JSON.stringify(data))
@@ -154,6 +170,9 @@ function renameCategory(id) {
 
 
 iNewCategory.addEventListener('keypress', (e) => {
+    resetInput(iNewCategory)
+    resetExistingInput(iNewCategory)
+    iNewCategory.placeholder = 'Press Enter to confirm'
     if (e.target === document.activeElement && e.key === 'Enter') {
         newCategory()
         loadCategories()
@@ -172,13 +191,18 @@ function saveChangedCategoryName(id) {
     const categories = data.categories
     const todos = data.todos
 
+    iCategoryName.addEventListener('input', function () {
+        resetInput(iCategoryName)
+        resetExistingInput(iCategoryName)
+    })
+
     if (iCategoryName.value === '') {
-        alert('Please enter a Name.')
+        shakeOnMissingInput(iCategoryName)
         return
     }
 
     if (categories.includes(iCategoryName.value.toLowerCase()) && iCategoryName.value.toLowerCase() !== categories[id]) {
-        alert('This category already exists.')
+        shakeOnExistingInput(iCategoryName)
         return
     }
 

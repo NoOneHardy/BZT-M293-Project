@@ -3,6 +3,7 @@ body {
     height: 100%;
     background: radial-gradient(var(--primary-color), var(--secondary-color));
     background-repeat: no-repeat;
+    position: relative;
 }
 
 @keyframes showImpressumPanel {

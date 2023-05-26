@@ -9,6 +9,9 @@ const bFinish = document.getElementById('finish')
 bCreate.addEventListener('click', function () {
     if (iName.value === "") {
         shakeOnMissingInput(iName)
+        if (iDate.value === "") {
+            shakeOnMissingInput(iDate)
+        }
         return
     } else if (iDate.value === "") {
         shakeOnMissingInput(iDate)

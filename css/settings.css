@@ -309,12 +309,13 @@ input.color::-webkit-color-swatch-wrapper {
     text-shadow: 0px 0px 3px var(--primary-color);
 }
 
-#new-category-items {
+#new-category-item {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: 100%;
     max-width: 600px;
 }
@@ -353,6 +354,7 @@ input.color::-webkit-color-swatch-wrapper {
     text-align: center;
     text-shadow: 0px 0px 3px var(--primary-color);
     padding: 10px 20px 10px 30px;
+    position: relative;
 }
 
 #category-list li span.fa-solid {
@@ -463,5 +465,6 @@ input.color::-webkit-color-swatch-wrapper {
 
     #category-list li {
         min-width: 300px;
+        max-width: calc(100vw - 30px);
     }
 }

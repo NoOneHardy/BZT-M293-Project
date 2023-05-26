@@ -109,17 +109,20 @@ function editTodo() {
 
 function saveChanges() {
     if (iName.value === "") {
-        alert("Please enter a name.")
+        shakeOnMissingInput(iName)
+        if (iDate.value === "") {
+            shakeOnMissingInput(iDate)
+        }
         return
     } else if (iDate.value === "") {
-        alert("Please enter a date.")
+        shakeOnMissingInput(iDate)
         return
     }
     
     todos[id].name = iName.value
     todos[id].date = iDate.value
     todos[id].category = sCategory.value
-    todos[id].info = iInfo.innerHTML
+    todos[id].info = iInfo.value
     todos[id].important = iImportant.checked
     
     let data = JSON.parse(localStorage.getItem('data'))
@@ -139,6 +142,15 @@ function saveChanges() {
     bSave.style.setProperty("display", "none")
     loadDetail()
 }
+
+iName.addEventListener('input', () => {
+    resetInput(iName)
+})
+
+iDate.addEventListener('input', () => {
+    resetInput(iDate)
+})
+
 
 loadCategoriesIntoSelect()
 loadDetail()
