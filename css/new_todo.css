@@ -58,6 +58,7 @@ label.check-container input:checked~.checkmark {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
     margin: 5px;
     padding: 10px;
 }
@@ -105,6 +106,7 @@ label.check-container input:checked~.checkmark {
     font-size: 20px;
     font-weight: 700;
     color-scheme: dark;
+    position: relative;
 }
 
 #iInfo {

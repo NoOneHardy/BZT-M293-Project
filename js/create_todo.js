@@ -8,10 +8,10 @@ const bFinish = document.getElementById('finish')
 
 bCreate.addEventListener('click', function () {
     if (iName.value === "") {
-        alert("Please enter a name.")
+        shakeOnMissingInput(iName)
         return
     } else if (iDate.value === "") {
-        alert("Please enter a date.")
+        shakeOnMissingInput(iDate)
         return
     }
     let todos = []
@@ -53,10 +53,13 @@ bCreate.addEventListener('click', function () {
 
 bFinish.addEventListener('click', function () {
     if (iName.value === "") {
-        alert("Please enter a name.")
+        shakeOnMissingInput(iName)
+        if (iDate.value === "") {
+            shakeOnMissingInput(iDate)
+        }
         return
     } else if (iDate.value === "") {
-        alert("Please enter a date.")
+        shakeOnMissingInput(iDate)
         return
     }
     let todos = []
@@ -108,5 +111,14 @@ function loadCategoriesIntoSelect() {
 
     iCategory.innerHTML = html
 }
+
+iName.addEventListener('input', () => {
+    resetInput(iName)
+})
+
+iDate.addEventListener('input', () => {
+    resetInput(iDate)
+})
+
 
 loadCategoriesIntoSelect()

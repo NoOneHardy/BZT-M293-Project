@@ -1,0 +1,63 @@
+@keyframes shakeOnMissingInput {
+    0% {
+        transform: translate(10px, 0px);
+    }
+
+    16.6% {
+        transform: translate(-10px, 0px);
+    }
+
+    33.3% {
+        transform: translate(10px, 0px);
+    }
+
+    50% {
+        transform: translate(-10px, 0px);
+    }
+
+    66.6% {
+        transform: translate(10px, 0px);
+    }
+
+    83.3% {
+        transform: translate(-10px, 0px);
+    }
+
+    100% {
+        transform: translate(10px, 0px);
+    }
+}
+
+.empty>input {
+    animation-name: shakeOnMissingInput;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.empty>#iName,
+.empty>#iDate {
+    box-shadow: 0px 0px 10px red;
+}
+
+#name::after, #date::after {
+    display: none;
+}
+
+#name.empty::after {
+    content: "Name can't be empty";
+    left: 30px;
+}
+
+#date.empty::after {
+    content: "Date can't be empty";
+    right: 30px;
+}
+
+#date.empty::after, #name.empty::after {
+    position: absolute;
+    display: block;
+    bottom: -5px;
+    color: var(--text);
+    color: red;
+    font-size: 13px;
+}
