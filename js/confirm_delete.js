@@ -7,6 +7,7 @@ function showPanel(id) {
     const which_category = panel.getElementsByTagName('span')[0]
     warn_category.innerHTML = getCategoryDisplayName(category)
     which_category.innerHTML = warn_category.innerHTML
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     panel.style.setProperty('top', '40vh')
 }
 
